@@ -1,0 +1,46 @@
+## Evaluation for rep_type: ULSE-n2, regularized: 0.1, p: 0.35, q: 0.2 ##
+
+### Metric: NMI ###
+Run 0: Time scores: [0.5454, 0.0205, 0.8882] | Average: 0.484689954458
+Run 1: Time scores: [0.5367, 0.1389, 0.9187] | Average: 0.531424661031
+Run 2: Time scores: [0.5533, 0.1667, 0.9593] | Average: 0.559784009134
+Run 3: Time scores: [0.6108, 0.0655, 0.9593] | Average: 0.545182498372
+Run 4: Time scores: [0.5867, 0.1347, 0.9187] | Average: 0.546697926297
+Run 5: Time scores: [0.5551, 0.2085, 0.9593] | Average: 0.574315597379
+Run 6: Time scores: [0.5849, 0.0110, 0.8066] | Average: 0.467474601945
+Run 7: Time scores: [0.5541, 0.0689, 0.8616] | Average: 0.494869435955
+Run 8: Time scores: [0.6055, 0.1326, 0.9020] | Average: 0.546700155896
+Run 9: Time scores: [0.5161, 0.0466, 0.9187] | Average: 0.493783162719
+Run 10: Time scores: [0.6304, 0.1572, 0.9593] | Average: 0.582307885786
+Run 11: Time scores: [0.4776, 0.1249, 0.9286] | Average: 0.510390815667
+Run 12: Time scores: [0.6498, 0.1273, 0.8882] | Average: 0.555124398079
+Run 13: Time scores: [0.5521, 0.0753, 0.8881] | Average: 0.505181524405
+Run 14: Time scores: [0.7044, 0.1715, 0.9593] | Average: 0.611734262328
+Run 15: Time scores: [0.6539, 0.1747, 0.9593] | Average: 0.595977851747
+Run 16: Time scores: [0.4919, 0.0568, 0.8881] | Average: 0.478903885698
+Run 17: Time scores: [0.6172, 0.1971, 0.8311] | Average: 0.548466319078
+Run 18: Time scores: [0.6108, 0.0395, 0.9593] | Average: 0.536526559807
+Run 19: Time scores: [0.6167, 0.1076, 1.0000] | Average: 0.574747093863
+
+### Metric: ARI ###
+Run 0: Time scores: [0.6280, 0.0427, 0.9406] | Average: 0.537092777156
+Run 1: Time scores: [0.5724, 0.1451, 0.9602] | Average: 0.559222412242
+Run 2: Time scores: [0.6249, 0.1517, 0.9800] | Average: 0.585515085607
+Run 3: Time scores: [0.6376, 0.0663, 0.9800] | Average: 0.561312654229
+Run 4: Time scores: [0.6604, 0.0921, 0.9602] | Average: 0.570914002457
+Run 5: Time scores: [0.6328, 0.1577, 0.9800] | Average: 0.590181554626
+Run 6: Time scores: [0.6460, 0.0080, 0.8830] | Average: 0.512340771132
+Run 7: Time scores: [0.5795, 0.0450, 0.9212] | Average: 0.515246457997
+Run 8: Time scores: [0.6161, 0.0198, 0.9406] | Average: 0.525485156043
+Run 9: Time scores: [0.5741, 0.0511, 0.9602] | Average: 0.528487506872
+Run 10: Time scores: [0.6626, 0.1340, 0.9800] | Average: 0.592192965618
+Run 11: Time scores: [0.5226, 0.0738, 0.9602] | Average: 0.518849708843
+Run 12: Time scores: [0.6675, 0.0782, 0.9406] | Average: 0.562107750275
+Run 13: Time scores: [0.6250, 0.0865, 0.9406] | Average: 0.550701515698
+Run 14: Time scores: [0.7633, 0.0908, 0.9800] | Average: 0.611360655028
+Run 15: Time scores: [0.7589, 0.2118, 0.9800] | Average: 0.650236064462
+Run 16: Time scores: [0.5210, 0.0487, 0.9406] | Average: 0.503422554192
+Run 17: Time scores: [0.6838, 0.2521, 0.9020] | Average: 0.612628447117
+Run 18: Time scores: [0.6941, 0.0149, 0.9800] | Average: 0.563026140082
+Run 19: Time scores: [0.6734, 0.0414, 1.0000] | Average: 0.571608686948
+
