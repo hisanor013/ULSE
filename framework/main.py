@@ -198,7 +198,7 @@ def run_node2vec(args, edge_path, emb_size):
         workers=args.workers,
         iter=args.iter,
         weighted=args.weighted,
-        directed=args.directed,
+        directed=getattr(args, 'directed', False),
         n_jobs=args.n_jobs,
     )
     run_embedder(embedder, output_path, "Node2Vec")
@@ -265,6 +265,7 @@ if __name__ == "__main__":
         "school": 9,
         "brain": 10,
         "stock": 11,
+        "copenhagen_bt": 7,
     }
 
     parser = argparse.ArgumentParser()

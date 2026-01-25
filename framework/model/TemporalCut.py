@@ -93,9 +93,9 @@ class TemporalGraph:
 
     def _compute_single_laplacian(self, t: int, normalized: bool) -> sp.spmatrix:
         """Compute single Laplacian matrix (for parallelization)"""
-        A = nx.adjacency_matrix(
+        A = sp.csr_matrix(nx.adjacency_matrix(
             self.graphs[t], nodelist=self._node_list, weight="weight"
-        )
+        ))
         if normalized:
             return n1_laplacian(A)
         else:
@@ -1054,7 +1054,8 @@ class TemporalCut(BaseEmbedder):
                 ):
                     progress = (completed_chunks / total_chunks) * 100
                     print(
-                        f"    Progress: {completed_chunks}/{total_chunks} chunks complete ({progress:.1f}%)"
+                        f"    Progress: {completed_chunks}/{total_chunks} chunks complete ({progress:.1f}%)",
+                        flush=True
                     )
 
         print(f"  Laplacian computation complete: {len(vals_list)} time steps")
@@ -1067,11 +1068,11 @@ class TemporalCut(BaseEmbedder):
         vals_list, vecs_list = [], []
 
         for t in range(start_t, end_t):
-            A = nx.adjacency_matrix(
+            A = sp.csr_matrix(nx.adjacency_matrix(
                 self.temporal_graph.get_snapshot(t),
                 nodelist=self.orig_nodes,
                 weight="weight",
-            )
+            ))
             L_t = (
                 n1_laplacian(A)
                 if self.cut_type == "normalized"
@@ -1148,7 +1149,8 @@ class TemporalCut(BaseEmbedder):
                 ):
                     progress = (completed_blocks / total_blocks) * 100
                     print(
-                        f"    Progress: {completed_blocks}/{total_blocks} blocks complete ({progress:.1f}%)"
+                        f"    Progress: {completed_blocks}/{total_blocks} blocks complete ({progress:.1f}%)",
+                        flush=True
                     )
 
         print("  Block diagonal matrix construction complete")
@@ -1203,7 +1205,8 @@ class TemporalCut(BaseEmbedder):
                 ):
                     progress = (completed_chunks / total_chunks) * 100
                     print(
-                        f"    Progress: {completed_chunks}/{total_chunks} chunks complete ({progress:.1f}%)"
+                        f"    Progress: {completed_chunks}/{total_chunks} chunks complete ({progress:.1f}%)",
+                        flush=True
                     )
 
         print(f"  Temporal connection matrix construction complete: {len(B_vals)} elements")
@@ -1280,7 +1283,8 @@ class TemporalCut(BaseEmbedder):
                 ):
                     progress = (completed_chunks / total_chunks) * 100
                     print(
-                        f"    Progress: {completed_chunks}/{total_chunks} chunks complete ({progress:.1f}%)"
+                        f"    Progress: {completed_chunks}/{total_chunks} chunks complete ({progress:.1f}%)",
+                        flush=True
                     )
 
         print("  Vector reconstruction complete")
