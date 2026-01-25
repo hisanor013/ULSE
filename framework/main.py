@@ -265,7 +265,6 @@ if __name__ == "__main__":
         "school": 9,
         "brain": 10,
         "stock": 11,
-        "copenhagen_bt": 7,
     }
 
     parser = argparse.ArgumentParser()

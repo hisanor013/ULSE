@@ -891,9 +891,6 @@ def run_clustering_comparison(args):
         "school": 9,
         "brain": 10,
         "stock": 11,
-        "stock2": 11,
-        "copenhagen_bt_daily": 7,
-        "copenhagen_bt_hourly":7
     }
 
     # Dataset and node count settings
@@ -903,9 +900,6 @@ def run_clustering_comparison(args):
         "school": 327,
         "brain": 5000,
         "stock": 417,
-        "stock2": 417,
-        "copenhagen_bt_daily": 692,
-        "copenhagen_bt_hourly": 692,
     }
 
     # Dataset list setup
@@ -1165,9 +1159,6 @@ if __name__ == "__main__":
             "school",
             "brain",
             "stock",
-            "stock2",
-            "copenhagen_bt_daily",
-            "copenhagen_bt_hourly",
             "all",
         ],
         help="Dataset to evaluate ('all' for all datasets)",
