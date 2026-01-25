@@ -85,6 +85,64 @@ For detailed parameters, see:
 python framework/main.py --help
 ```
 
+### Clustering Evaluation and Comparison Tables
+
+After computing embeddings using `framework/main.py`, you can evaluate the clustering performance and generate comparison tables (CSV and LaTeX formats) using the clustering evaluation script.
+
+#### Step 1: Compute Embeddings
+
+First, compute embeddings for the methods you want to compare:
+
+```bash
+# Compute embeddings for all methods
+python framework/main.py --dataset brain --method all
+
+# Or compute embeddings for specific methods
+python framework/main.py --dataset brain --method USE --rep_type ULSE-n1
+python framework/main.py --dataset brain --method TemporalCut
+```
+
+The embeddings will be saved in `emb/{dataset}/` directory.
+
+#### Step 2: Run Clustering Evaluation
+
+After embeddings are computed, run the clustering evaluation script to generate comparison tables:
+
+```bash
+# Evaluate clustering for a single dataset
+python framework/experiments/clustering.py --dataset brain
+
+# Evaluate clustering for all datasets
+python framework/experiments/clustering.py --dataset all
+
+# Specify custom output path
+python framework/experiments/clustering.py --dataset brain --output result/my_results.csv
+```
+
+#### Output Files
+
+The clustering evaluation script generates the following files in the `framework/experiments/result/` directory (or the specified output directory):
+
+1. **Detailed Results CSV** (`clustering_results_{dataset}.csv`):
+   - Contains detailed evaluation results for each method and dataset
+   - Includes ACC, NMI, ARI, F1 scores, number of nodes, clusters, and time steps
+
+2. **Summary CSV** (`clustering_summary_{dataset}.csv`):
+   - Contains average performance metrics across datasets for each method
+
+3. **Comparison Table CSV** (`clustering_table_{dataset}.csv`):
+   - Contains formatted comparison table with best results highlighted
+   - Organized by dataset and metric (ACC, NMI, ARI, F1)
+
+4. **LaTeX Table** (`clustering_table_{dataset}.tex`):
+   - LaTeX-formatted comparison table ready for paper inclusion
+   - Best results are bolded, second-best results are underlined
+
+5. **LaTeX Summary** (`clustering_summary_{dataset}.tex`):
+   - LaTeX-formatted summary table with average performance
+
+The script also displays a formatted comparison table in the terminal, showing which methods perform best for each metric.
+
 ## Directory Structure
 
 ```
@@ -107,5 +165,5 @@ pip install -r requirements.txt
 ## Notes
 
 - For deep learning methods (DyRep, etc.), please refer to the implementations in the corresponding directories
-- Time binning functionality is automatically applied for large-scale datasets (>1000 timesteps)
+- Time binning functionality can be enabled with `--use_time_binning` flag. When enabled, datasets with more timesteps than `--max_timesteps` (default: 100) will be automatically binned
 - Experimental results are saved in `framework/experiments/result/`

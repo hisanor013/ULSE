@@ -1,0 +1,17 @@
+[project]
+name = "ulse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "gensim>=4.3.1",
+    "ipykernel>=7.1.0",
+    "munkres==1.1.4",
+    "networkx==2.8.4",
+    "numpy>=1.24.0",
+    "pandas>=1.5.2",
+    "scikit-learn>=1.1.1",
+    "scipy>=1.9.3,<1.11.0",
+    "torch>=2.0.0",
+]
