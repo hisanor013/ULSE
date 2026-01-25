@@ -165,5 +165,5 @@ pip install -r requirements.txt
 ## Notes
 
 - For deep learning methods (DyRep, etc.), please refer to the implementations in the corresponding directories
-- Time binning functionality is automatically applied for large-scale datasets (>1000 timesteps)
+- Time binning functionality can be enabled with `--use_time_binning` flag. When enabled, datasets with more timesteps than `--max_timesteps` (default: 100) will be automatically binned
 - Experimental results are saved in `framework/experiments/result/`
